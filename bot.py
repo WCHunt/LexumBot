@@ -36,7 +36,7 @@ async def price(ctx, *, item):
         data = response.json()
         print(data["data"])
         item_price = data["data"][item_id]["high"]
-        await ctx.send(f"The current price of {item.capitalize()} is {item_price} gp.")
+        await ctx.send(f"The current price of {item.capitalize()} is {item_price:,} gp.")
     else:
         await ctx.send("Sorry, an error occurred while fetching the item price.")
 
